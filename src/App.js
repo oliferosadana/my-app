@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import MenuMakanan from './components/MenuMakanan/MenuMakanan';
+import MenuMinuman from './components/MenuMinuman/MenuMinuman'
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,20 +8,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Cafe and Resto Codepolitan</h1>
+        <h2>Menu Makanan</h2>
+          <MenuMakanan namaMenu={"Ayam Bakar 'props'"} hargaMenu={"Rp. 25.000 'props'"} />
+          <MenuMakanan namaMenu={"Nasi Goreng 'props'"} hargaMenu={"Rp. 22.000 'props'"} />
+        <h2>Menu Minuman</h2>
+          <MenuMinuman namaMenu={"Juice Melon"} hargaMenu={"15.000"}/>
+          <MenuMinuman namaMenu={"Milkshake Strawberry"} hargaMenu={"20.000"}/>
       </div>
     );
   }

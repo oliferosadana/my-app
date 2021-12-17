@@ -5,10 +5,17 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      namaResto: 'Codepolitan'
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>Cafe and Resto Codepolitan</h1>
+        <h1>Cafe and Resto {this.state.namaResto}</h1>
         <h2>Menu Makanan</h2>
           <MenuMakanan namaMenu={"Ayam Bakar 'props'"} hargaMenu={"Rp. 25.000 'props'"} />
           <MenuMakanan namaMenu={"Nasi Goreng 'props'"} hargaMenu={"Rp. 22.000 'props'"} />

@@ -12,6 +12,10 @@ class App extends Component {
     }
   }
 
+  handleGantiNama = () => {
+    this.setState({namaResto: 'Programmer'})
+  }
+
   render() {
     return (
       <div className="App">
@@ -22,6 +26,7 @@ class App extends Component {
         <h2>Menu Minuman</h2>
           <MenuMinuman namaMenu={"Juice Melon"} hargaMenu={"15.000"}/>
           <MenuMinuman namaMenu={"Milkshake Strawberry"} hargaMenu={"20.000"}/>
+          <button onClick={this.handleGantiNama}>Ganti Nama Resto</button>
       </div>
     );
   }

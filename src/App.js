@@ -8,7 +8,18 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      namaResto: 'Codepolitan'
+      namaResto: 'Codepolitan',
+      menuMakanan: [
+        { nama: 'Ayam Bakar', harga: 25000, stock: 10 },
+        { nama: 'Nasi Goreng', harga: 22000, stock: 0 },
+      ],
+      MenuMinuman: [
+        { nama: 'Juice Melon',    harga: 15000 },
+        { nama: 'Milkshake Strawberry', harga: 20000 },
+        { nama: 'Juice Tomat',    harga: 15000 },
+        { nama: 'Juice Mangga',   harga: 15000 },
+        { nama: 'Juice Alpukat',  harga: 15000 },
+      ]
     }
   }
 
@@ -20,13 +31,24 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Cafe and Resto {this.state.namaResto}</h1>
-        <h2>Menu Makanan</h2>
-          <MenuMakanan namaMenu={"Ayam Bakar 'props'"} hargaMenu={"Rp. 25.000 'props'"} />
-          <MenuMakanan namaMenu={"Nasi Goreng 'props'"} hargaMenu={"Rp. 22.000 'props'"} />
+          <button onClick={this.handleGantiNama} className='btn btn-primary'>Ganti Nama Resto</button>
+        <h2 className="header-menu">Menu Makanan</h2>
+          <MenuMakanan 
+            namaMenu={this.state.menuMakanan[0].nama} 
+            hargaMenu={this.state.menuMakanan[0].harga} 
+            stock={this.state.menuMakanan[0].stock}  
+          />
+          <MenuMakanan
+            namaMenu={this.state.menuMakanan[1].nama} 
+            hargaMenu={this.state.menuMakanan[1].harga} 
+            stock={this.state.menuMakanan[1].stock}
+          />
         <h2>Menu Minuman</h2>
           <MenuMinuman namaMenu={"Juice Melon"} hargaMenu={"15.000"}/>
           <MenuMinuman namaMenu={"Milkshake Strawberry"} hargaMenu={"20.000"}/>
-          <button onClick={this.handleGantiNama}>Ganti Nama Resto</button>
+          <MenuMinuman namaMenu={"Juice Tomat"} hargaMenu={"15.000"}/>
+          <MenuMinuman namaMenu={"Juice Mangga"} hargaMenu={"15.000"}/>
+          <MenuMinuman namaMenu={"Juice Alpukat"} hargaMenu={"15.000"}/>
       </div>
     );
   }
